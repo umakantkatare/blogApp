@@ -98,6 +98,27 @@ export class Services {
         }
     }
 
+    async deleteFile(fileId){
+        try {
+            await this.bucket.deleteFile(
+                Config.appwriteBucketId,
+                fileId
+            )
+            return true
+        } catch (error) {
+            console.log('error',error)
+            return false
+            
+        }
+    }
+
+    getFilePreview(fileId){
+       return this.bucket.getFilePreview(
+        Config.appwriteBucketId,
+            fileId
+        )
+    }
+
 }
 
 const service = new Services();
