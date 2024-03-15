@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {LogoutBtn, Container, Logo} from '../Header'
+import {LogoutBtn, Container, Logo} from './Header'
 import { Link } from 'react-router-dom'
-import { UseSelector, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 function Header() {
