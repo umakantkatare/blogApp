@@ -1,13 +1,12 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {LogoutBtn, Container, Logo} from './Header'
-import { Link } from 'react-router-dom'
+import {LogoutBtn, Container, Logo} from '../Index'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
 function Header() {
-  const authSlice = useSelector((state) => {state.auth.status})
+  const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
   navItems = [
     {
@@ -33,7 +32,7 @@ function Header() {
     {
       name: "Add Posts",
       slug: "/add-posts",
-      active: authStatus
+      // active: authStatus
     },
   ]
   return (

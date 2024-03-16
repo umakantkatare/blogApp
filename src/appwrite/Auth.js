@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 /* eslint-disable no-useless-catch */
 /* eslint-disable no-empty */
-import{Client, Account, ID} from "appwrite"
+import { Client, Account, ID } from 'appwrite';
 import Config from "../config/Config";
 
 export class AuthService {
@@ -31,8 +31,11 @@ export class AuthService {
     }
 
     async login({Email, Password}){
-       return await this.account.createEmailSession(Email, Password)
-
+        try {
+            return await this.account.createEmailSession(Email, Password);
+        } catch (error) {
+            throw error;
+        }
     }
 
     async getCurrentUser(){
@@ -45,11 +48,11 @@ export class AuthService {
         return null;
     }
 
-    async logOut(){
+    async logout(){
         try {
-            return await this.account.deleteSessions()
+            await this.account.deleteSessions();
         } catch (error) {
-            
+            console.log("Appwrite service :: logout :: error", error);
         }
     }
 }

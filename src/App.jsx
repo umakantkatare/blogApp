@@ -23,8 +23,8 @@ useEffect(() => {
     dispatch(logout())
   }
   })
-  .catch( console.log('error'))
-  .finally(() =>  setLoading(false))
+  .catch( console.log(' status error'))
+  // .finally(() =>  setLoading(false))
 }, [])
 
   return !loading ? (

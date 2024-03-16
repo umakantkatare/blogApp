@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {Signup as SignupComponent} from '../components/Signup'
+import {Signup as SignupComponent} from '../components/Index'
 
 function Signup() {
   return (

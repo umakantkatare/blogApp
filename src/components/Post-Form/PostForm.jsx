@@ -5,7 +5,7 @@ import React,{useCallback} from 'react'
 import { useForm } from 'react-hook-form'
 import service from '../../appwrite/Database'
 import { useNavigate } from 'react-router-dom'
-import { UseSelector, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {Button, Input, Select, RTE } from "../Index"
 
 function PostForm({post}) {

@@ -5,7 +5,7 @@ import service from '../appwrite/Database'
 
 
 function Home() {
-    const  [posts, setPosts] = useState()
+    const  [posts, setPosts] = useState([])
     useEffect(()=>{
        service.getPosts()
         .then((post) =>{
