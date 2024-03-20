@@ -10,27 +10,27 @@ export class AuthService {
 
     constructor() {
         this.client
-        .setEndpoint(Config.appwriteURL)
-        .setProject(Config.appwriteProjectId);
+            .setEndpoint(Config.appwriteURL)
+            .setProject(Config.appwriteProjectId);
 
         this.account = new Account(this.client)
     }
 
-    async createAccount({Email,Password, Name}){
+    async createAccount({ Email, Password, Name }) {
         try {
-          const userAccount =   await this.account.create(ID.unique() ,Email,Password,Name)
-          if (userAccount) {
-            return this.login
-          } else {
-            return userAccount
-          }
+            const userAccount = await this.account.create(ID.unique(), Email, Password, Name)
+            if (userAccount) {
+                return this.login
+            } else {
+                return userAccount
+            }
         } catch (error) {
             throw error;
         }
 
     }
 
-    async login({Email, Password}){
+    async login({ Email, Password }) {
         try {
             return await this.account.createEmailSession(Email, Password);
         } catch (error) {
@@ -38,17 +38,17 @@ export class AuthService {
         }
     }
 
-    async getCurrentUser(){
+    async getCurrentUser() {
         try {
             return await this.account.get()
-            
+
         } catch (error) {
             throw error
         }
         return null;
     }
 
-    async logout(){
+    async logout() {
         try {
             await this.account.deleteSessions();
         } catch (error) {

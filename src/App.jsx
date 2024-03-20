@@ -25,7 +25,10 @@ useEffect(() => {
   })
   .catch( console.log(' status error'))
   // .finally(() =>  setLoading(false))
+
 }, [])
+
+console.log(import.meta.env.VITE_APPWRITE_URL, 'appwriteurl')
 
   return !loading ? (
     <div className=' min-h-screen flex flex-wrap content-between bg-gray-500'>
